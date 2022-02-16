@@ -19,11 +19,11 @@
                 col-md-10 col-md-offset-1
                 sidebar-container">
 
-                <!-- Featured Tags -->
+                <!-- 标签/分类 -->
                 {{ if .Site.Params.featured_tags }}
                 <section>
                     <hr class="hidden-sm hidden-xs">
-                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <h5><a href="/tags/">标签/分类</a></h5>
                     <div class="tags">
                         {{ $featured_condition_size := .Site.Params.featured_condition_size }}
                         {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
@@ -41,7 +41,7 @@
                 {{ if .Site.Params.friends }}
                 <section>
                     <hr>
-                    <h5>FRIENDS</h5>
+                    <h5>友链</h5>
                     <ul class="list-inline">
                         {{ range .Site.Params.friend_link }}
                         <li><a target="_blank" href="{{.href}}">{{.title}}</a></li>
