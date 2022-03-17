@@ -15,3 +15,17 @@ var disq = new iDisqus('disqus-comment', {
 {{ else if .Site.DisqusShortname }}
 {{ template "_internal/disqus.html" . }}
 {{ end }}
+
+
+<!-- vcomments 评论框 end -->
+{{ if .Site.Params.valine_comment }}
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<div id="vcomments"></div>
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: '{{ .Site.Params.leancloud_app_id_for_valine }}',
+        appKey: '{{ .Site.Params.leancloud_app_key_for_valine }}'
+    })
+</script>
+{{ end }}
