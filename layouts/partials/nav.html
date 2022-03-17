@@ -28,7 +28,8 @@
                     <li>
                         <a href="{{ "/" | relLangURL }}">首页</a>
                     </li>
-                    {{ if not .Site.Params.omit_categories }}
+
+                    {{ if and (not .Site.Params.omit_categories) (.Site.Params.omit_categories_display) }}
                         {{ range $name, $taxonomy := .Site.Taxonomies.categories }}
                         <li>
                             <a href="{{ "categories/" | relLangURL }}{{ $name | urlize }}">{{ $name }}</a>
@@ -36,15 +37,17 @@
                         {{ end }}
                     {{ end }}
                     
-		    {{ range .Site.Params.addtional_menus }}
+		           {{ range .Site.Params.addtional_menus }}
                         <li><a href="{{.href | relLangURL}}">{{.title}}</a></li>
                     {{ end }}
 
+
                     {{ if .Site.Params.algolia_search }}
-		    <li>
+		            <li>
                         <a href="{{ "search" | relURL }}"><i class="fa fa-search"></i></a>
-		    </li>
+		            </li>
                     {{ end }}
+
                 </ul>
             </div>
         </div>
