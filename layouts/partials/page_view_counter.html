@@ -9,15 +9,16 @@
 
 <!-- View counter -->
 <!--访问LeanCloud的js包装脚本-->
-<script src="/js/av-core-mini-0.6.4.js"></script>
+<!-- <script src="https://cdn.jsdelivr.net/npm/leancloud-storage@4.12.2/dist/av-core-min.js"></script> -->
 <!--初始化LeanCloud的AV对象-->
-<script>
+<!-- <script>
 	AV.initialize("{{ .Site.Params.leancloud_app_id }}", "{{ .Site.Params.leancloud_app_key }}");
-</script>
+</script> -->
 <!--实现计数的js包装脚本-->
-<script type="text/javascript">
+<!-- <script type="text/javascript">
 function showTime(Counter) {
-    var query = new AV.Query(Counter);
+    // var query = new AV.Query(Counter);
+    const { query, User } = AV;
     var entries = [];
     var $visitors = $(".leancloud_visitors");
 
@@ -129,4 +130,4 @@ $(function() {
         showTime(Counter);
     }
 });
-</script>
+</script> -->
