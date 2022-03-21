@@ -25,7 +25,7 @@
     </section>
     {{ end }}
 
-    <!-- Short About -->
+    <!-- 简介 -->
 	{{ if .Site.Params.about_me }}
     <section class="visible-md visible-lg">
 	<hr><h5><a href="{{ "/about" | relLangURL }}">关于博主 </a></h5>
@@ -224,7 +224,8 @@
             </div>
     </section>
 	{{ end }}
-    <!-- Friends Blog -->
+
+    <!-- 友链  -->
     {{ if .Site.Params.friends }}
     <section>
         <hr class="hidden-sm hidden-xs">
@@ -237,13 +238,26 @@
     </section>
     {{ end }}
 
-    <!-- Bookmarks -->
+    <!-- 书签 -->
     {{ if .Site.Params.bookmarks }}
     <section>
         <hr>
-        <h5>BOOKMARKS</h5>
+        <h5>收藏/书签</h5>
         <ul class="list-inline">
             {{ range .Site.Params.bookmark_link }}
+            <li><a target="_blank" href="{{.href | relLangURL}}">{{.title}}</a></li>
+            {{ end }}
+        </ul>
+    </section>
+    {{ end }}
+
+    <!-- 工具 -->
+    {{ if .Site.Params.tools }}
+    <section>
+        <hr>
+        <h5>工具/资源</h5>
+        <ul class="list-inline">
+            {{ range .Site.Params.tool_link }}
             <li><a target="_blank" href="{{.href | relLangURL}}">{{.title}}</a></li>
             {{ end }}
         </ul>
